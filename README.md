@@ -45,5 +45,59 @@ The UCI Dataset Query Agent is an AI-powered chatbot designed to streamline inte
 
 ---
 
-## **File Structure**
+
+---
+
+## **File Descriptions**
+
+### 1. `main.py`
+- **Purpose:**  
+  Entry point for the application.  
+  Handles user interaction through a console-based interface.
+
+- **Key Features:**
+  - Listens for user queries.
+  - Routes queries to the workflow defined in `uci1.py`.
+  - Allows users to exit the application with the command `q`.
+
+---
+
+### 2. `uci1.py`
+- **Purpose:**  
+  Implements the chatbot's workflow using the `langgraph` library.
+
+- **Key Components:**
+  - **Workflow Logic:**  
+    Built using `StateGraph` to classify and manage user queries.
+  - **Query Classification:**  
+    Distinguishes between general questions and dataset download requests.
+  - **Processing Functions:**
+    - `chatbot1`: Extracts dataset IDs from user queries.
+    - `general_response`: Responds to general queries.
+    - `download`: Fetches datasets from the UCI repository.
+
+---
+
+### 3. `uciscrape.py`
+- **Purpose:**  
+  Implements web scraping functionality to fetch dataset details from the UCI Machine Learning Repository.
+
+- **Key Features:**
+  - Uses `requests` to send HTTP GET requests to UCI dataset pages.
+  - Extracts relevant metadata (e.g., dataset descriptions, attributes) using `BeautifulSoup`.
+
+---
+
+## **Installation and Usage**
+
+### **Prerequisites**
+- **Python Version:** 3.8 or higher.
+- Required Python libraries listed in `requirements.txt`.
+
+### **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/UCI-Dataset-Query-Agent.git
+   cd UCI-Dataset-Query-Agent
+
 
