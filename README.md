@@ -1,91 +1,49 @@
-# UCI Dataset Query Agent
+# **UCI Dataset Query Agent**
 
-## Description
-This project implements a chatbot agent to process queries related to UCI Machine Learning Repository datasets. Users can:
-- Ask general questions about datasets or machine learning topics.
-- Request specific datasets from the UCI repository by providing a dataset ID.
-
-The chatbot uses a workflow-based design to classify and handle queries efficiently, integrating an LLM-based agent and dataset scraping capabilities.
-
----
-
-## Features
-1. **Query Classification:** Determines whether a query is a general question or a dataset request.
-2. **Dataset Downloading:** Fetches datasets from the UCI Machine Learning Repository based on the given dataset ID.
-3. **Web Scraping:** Extracts dataset details directly from the UCI Machine Learning Repository's webpage.
-4. **General Assistance:** Responds to non-dataset-related questions in a helpful and informative manner.
+## **Description**
+The UCI Dataset Query Agent is an AI-powered chatbot designed to streamline interactions with the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php). It provides users with the ability to:
+- Query general information about machine learning and datasets.
+- Request and download datasets directly from the repository using dataset IDs.
+- Automate the collection, preprocessing, and management of datasets, with a vision for full automation of machine learning workflows, from dataset retrieval to model evaluation.
 
 ---
 
-## File Structure
+## **Features**
 
-### 1. `main.py`
-- **Purpose:**  
-  The entry point for the application.  
-  It initializes the chatbot workflow and interacts with the user via a console interface.
-  
-- **Code Highlights:**
-  - Listens for user input.
-  - Routes queries to the chatbot workflow for processing.
-  - Breaks on the command `q`.
+1. **Query Classification**  
+   - Distinguishes between general questions and dataset download requests.
+   - Efficient routing of user inputs for appropriate handling.
 
----
+2. **Dataset Downloading**  
+   - Fetches datasets directly from the UCI Machine Learning Repository based on provided dataset IDs.
 
-### 2. `uci1.py`
-- **Purpose:**  
-  Contains the main workflow definition using the `langgraph` library.  
-  Defines multiple nodes to classify, process, and respond to user queries.
+3. **Web Scraping**  
+   - Extracts detailed metadata (e.g., dataset descriptions, attributes) from UCI webpages using BeautifulSoup.
 
-- **Key Components:**
-  - **Workflow Logic:**  
-    Uses `StateGraph` to build and manage chatbot states.
-  - **Query Classifier:**  
-    A function determines if the query is a general inquiry or a dataset download request.
-  - **Chatbot Functions:**
-    - **`chatbot1`:** Extracts dataset IDs for download requests.
-    - **`general_response`:** Handles general user questions.
-    - **`download`:** Fetches the dataset based on the extracted ID.
-
-- **Workflow Flow:**
-  1. Starts with query classification (`chatbot` node).
-  2. Routes queries to:
-     - **General Response Node:** For general questions.
-     - **Dataset Workflow:** For dataset downloads.
-  3. Ends after executing the required action.
+4. **General Assistance**  
+   - Provides informative responses for machine learning-related questions or general inquiries.
 
 ---
 
-### 3. `uciscrape.py`
-- **Purpose:**  
-  Provides web scraping functionality to extract dataset details from the UCI Machine Learning Repository.
+## **Workflow**
 
-- **Code Highlights:**
-  - Uses the `requests` library to send HTTP GET requests to UCI URLs.
-  - Parses HTML using `BeautifulSoup` to extract `<pre>` tags containing dataset metadata.
+1. **Input Handling**  
+   - Users provide a query or a dataset ID.  
+   - The system classifies the query type (general question or dataset-related).
 
+2. **Query Processing**  
+   - For general questions, the chatbot responds with relevant information.  
+   - For dataset requests:
+     - Scrapes the UCI webpage for metadata using the provided dataset ID.
+     - Downloads the dataset file (if available).
 
-# Installation and Usage
+3. **Response Generation**  
+   - Outputs the requested dataset or a detailed answer to the user query.
 
-## Installation
+4. **Future Vision**  
+   - Automate machine learning workflows by integrating dataset retrieval, preprocessing, training, and metric evaluation.
 
-### Prerequisites
-- **Python Version:** 3.8 or higher.
-- Required Python libraries specified in `requirements.txt`.
+---
 
-### Steps
-1. Clone the repository to your local system:  
-   ```bash
-   git clone <repository-url>
+## **File Structure**
 
-## Contributions
-
-I welcome contributions to enhance this project! If you'd like to contribute, please follow these steps:
-
-1. **Fork the Repository**:  
-   Click the "Fork" button on the top-right corner of this repository to create your copy.
-
-2. **Clone the Forked Repository**:  
-   ```bash
-   git clone https://github.com/<your-username>/<repository-name>.git
-
-3. **I vision this agent to automate ML training from dataset collection to model metric calculation**
