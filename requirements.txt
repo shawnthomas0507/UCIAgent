@@ -1,0 +1,7 @@
+requests==2.31.0
+beautifulsoup4==4.13.0
+langchain==0.0.200
+langchain-groq==0.1.5
+langchain-core==0.0.120
+llama-cpp-python==0.1.52
+typing-extensions==4.8.0
