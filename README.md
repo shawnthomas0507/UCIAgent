@@ -79,7 +79,7 @@ The chatbot uses a workflow-based design to classify and handle queries efficien
 
 ## Contributions
 
-We welcome contributions to enhance this project! If you'd like to contribute, please follow these steps:
+I welcome contributions to enhance this project! If you'd like to contribute, please follow these steps:
 
 1. **Fork the Repository**:  
    Click the "Fork" button on the top-right corner of this repository to create your copy.
@@ -87,3 +87,5 @@ We welcome contributions to enhance this project! If you'd like to contribute, p
 2. **Clone the Forked Repository**:  
    ```bash
    git clone https://github.com/<your-username>/<repository-name>.git
+
+3. **I vision this agent to automate ML training from dataset collection to model metric calculation**
